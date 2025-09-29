@@ -1,0 +1,35 @@
+.service-slide {
+    padding: 10px;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .custom-arrow {
+    background-color: #b12322;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .custom-arrow::before {
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .slick-dots li button:before {
+    color: #b12322;
+  }
+  
