@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./CSS/Services.css"; // your custom CSS
+import "./CSS/Services.css";
 
 const Services = () => {
   const services = [
@@ -18,27 +18,30 @@ const Services = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 4, // Desktop default
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
     responsive: [
-      { breakpoint: 992, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 576, settings: { slidesToShow: 1 } },
+      { breakpoint: 1200, settings: { slidesToShow: 3 } }, // large tablets
+      { breakpoint: 992, settings: { slidesToShow: 2 } }, // tablets
+      { breakpoint: 576, settings: { slidesToShow: 1, centerMode: false } }, // Mobile: 1 card full width
     ],
   };
 
   return (
     <div className="container py-5">
-      <h2 className="mb-4">Most booked services</h2>
+      <h2 className="mb-4 text-center">Most Booked Services</h2>
       <Slider {...settings}>
         {services.map((service) => (
-          <div key={service.id} className="service-slide px-2">
-            <div className="service-card shadow-sm rounded text-center p-3">
-              <img src={service.img} alt={service.title} className="img-fluid rounded mb-2" />
+          <div key={service.id} className="px-2">
+            <div className="service-card shadow-sm rounded text-center p-3" style={{ width: "100%" }}>
+              <img
+                src={service.img}
+                alt={service.title}
+                className="img-fluid rounded mb-2"
+                style={{ width: "100%", height: "auto" }}
+              />
               <h5>{service.title}</h5>
               <p className="text-muted">{service.description}</p>
               <p className="fw-bold">{service.price}</p>
@@ -50,16 +53,5 @@ const Services = () => {
     </div>
   );
 };
-
-// Custom Arrows
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return <div className={`${className} custom-arrow`} style={{ ...style }} onClick={onClick} />;
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return <div className={`${className} custom-arrow`} style={{ ...style }} onClick={onClick} />;
-}
 
 export default Services;
