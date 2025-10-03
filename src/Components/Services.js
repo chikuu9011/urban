@@ -30,8 +30,8 @@ const Services = () => {
     autoplaySpeed: 2000,
     responsive: [
       { breakpoint: 1200, settings: { slidesToShow: 3 } }, // large tablets
-      { breakpoint: 992, settings: { slidesToShow: 2 } }, // tablets
-      { breakpoint: 576, settings: { slidesToShow: 1, centerMode: false } }, // Mobile: 1 card full width
+      { breakpoint: 992, settings: { slidesToShow: 1 } }, // tablets
+      { breakpoint: 406, settings: { slidesToShow: 1, centerMode: false } }, // Mobile: 1 card full width
     ],
   };
 
