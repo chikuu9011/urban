@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import Entry from "./Pages/Entry";
+import Singlepage from "./Pages/Singlepage";
 
 const Router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const Router = createBrowserRouter([
         path: "/",
         element: <Entry />,
       },
+      {
+        path:"/service/:id",
+        element:<Singlepage/>
+      }
     ],
   },
 ]);

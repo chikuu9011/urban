@@ -3,8 +3,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CSS/Services.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     { id: 1, img: "/images/carousal/7.jpeg", title: "Women's Salon", description: "Professional haircuts and styling for women.", price: "$25", details: "Includes haircut, styling, and shampoo." },
     { id: 2, img: "/images/carousal/4.jpeg", title: "Men's Salon", description: "Haircuts, grooming, and beard styling for men.", price: "$20", details: "Includes haircut, beard trim, and hair wash." },
@@ -13,7 +17,9 @@ const Services = () => {
     { id: 5, img: "/images/carousal/8.png", title: "Plumber", description: "Plumbing services for all types of repairs.", price: "$30", details: "Leak fixes, pipe installations, and repairs." },
     { id: 6, img: "/images/carousal/1.jpeg", title: "Electrician", description: "Electrical maintenance and repair services.", price: "$35", details: "Wiring, installation, and troubleshooting services." },
   ];
-
+  const handleCardClick = (id) => {
+    navigate(`/service/${id}`);
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -21,7 +27,7 @@ const Services = () => {
     slidesToShow: 4, // Desktop default
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     responsive: [
       { breakpoint: 1200, settings: { slidesToShow: 3 } }, // large tablets
       { breakpoint: 992, settings: { slidesToShow: 2 } }, // tablets
@@ -34,7 +40,7 @@ const Services = () => {
       <h2 className="mb-4 text-center">Most Booked Services</h2>
       <Slider {...settings}>
         {services.map((service) => (
-          <div key={service.id} className="px-2">
+          <div key={service.id} className="px-2" onClick={() => handleCardClick(service.id)}>
             <div className="service-card shadow-sm rounded text-center p-3" style={{ width: "100%" }}>
               <img
                 src={service.img}
