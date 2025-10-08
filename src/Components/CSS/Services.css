@@ -33,3 +33,56 @@
     color: #b12322;
   }
   
+  /* Shadow around entire card on hover */
+  .hover-box {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-box:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* shadow on the column */
+    transform: translateY(-5px); /* subtle lift effect */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Text transition */
+  .hover-text p {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    padding-bottom: 10px;
+  }
+  
+  /* Hover text effect: color + underline */
+ /* Ensure transition on the text */
+.hover-text p {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* The animated underline using ::after */
+.hover-text p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #b12322;
+  transition: width 0.4s ease;
+}
+
+/* On hover, animate the underline from left to right */
+.hover-box:hover .hover-text p {
+  color: #b12322;
+  font-weight: 600;
+}
+
+.hover-box:hover .hover-text p::after {
+  width: 100%;
+}
+
+.upper-div{
+  padding:50px;
+  border: solid 1px #e9e5e5;
+  border-radius: 5px;
+}
