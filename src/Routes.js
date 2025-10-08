@@ -3,6 +3,8 @@ import Home from "./Pages/Home";
 import Entry from "./Pages/Entry";
 import Singlepage from "./Pages/Singlepage";
 import Cart from "./Pages/Cart";
+import LoginPage from "./Pages/Login";
+import Pay from "./Pages/Pay";
 
 const Router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const Router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      {
+        path: "/Login",
+        element: <LoginPage />
+      },
+      {
+        path:"/pay",
+        element:<Pay/>
       }
 
     ],
