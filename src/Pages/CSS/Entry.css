@@ -98,6 +98,10 @@
 @media (max-width: 768px) {
   .multi-carousel-container img {
     height: 200px;
+    
+  }
+  .e-box-img img{
+    width: 80%;
   }
 }
 
