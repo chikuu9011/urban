@@ -66,7 +66,7 @@ const Header = () => {
 
             {/* Cart/Profile Icons */}
             <div className="menu-cart me-2">
-              <Link to="#">
+              <Link to="/cart">
                 <img
                   src="images/cart.svg"
                   alt="cart"
@@ -133,7 +133,7 @@ const Header = () => {
                   className="form-control mb-3"
                 />
 
-                
+
               </div>
             </div>
           </div>
